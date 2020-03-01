@@ -20,6 +20,8 @@ public class BasicNavigation {
 
 
         driver.get("http://google.com");
+        driver.manage().window().maximize(); // to maximize browser
+       // driver.manage().window().fullscreen(); // to make it fullscreen
 
         Thread.sleep(3000);
 
@@ -31,18 +33,34 @@ public class BasicNavigation {
         System.out.println("title = " + title);
 
         if(expectedTitle.equals(title)){
-            System.out.println("Test Passed");
+            System.out.println("TEST PASSED");
         }else{
-            System.out.println("Test Failed");
+            System.out.println("TEST FAILED");
         }
+
+        driver.navigate().to("http://amazon.com");
+
+        if(driver.getTitle().toLowerCase().contains("amazon")){
+            System.out.println("TEST PASSED");
+        }else{
+            System.out.println("TEST FAILED");
+        }
+        driver.navigate().back();
+        driver.navigate().forward();
 
         driver.close();
 
 
 
-
-
-
-
     }
+
+    public static  void verifyEquals(String arg1, String arg2){
+        if(arg1.equals(arg2)){
+            System.out.println("TEST PASSED!");
+        }else{
+            System.out.println("TEST FAILED");
+        }
+    }
+
+
 }
