@@ -34,7 +34,7 @@ public class GoogleSearchTest {
         Thread.sleep(5000);
 
         WebElement news = driver.findElement(By.linkText("News"));
-        news.click(); // to click on th element
+        news.click(); // to click on the element
         Thread.sleep(4000);
 
 
