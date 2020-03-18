@@ -1,4 +1,4 @@
-package com.automation.tests.vytrack.login;
+package com.automation.tests.vytrackDay9.login;
 
 import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -48,7 +48,7 @@ public class LoginPageTests {
     public void loginAsStoreManager(){
 
         driver.findElement(usernameBy).sendKeys(username);
-        driver.findElement(passwordBy).sendKeys(password);
+        driver.findElement(passwordBy).sendKeys(password,Keys.ENTER);
         BrowserUtils.wait(5);
 
         String expected="Dashboard";
