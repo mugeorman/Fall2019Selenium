@@ -21,6 +21,7 @@ public class CalendarsEventsPage extends AbstractPageBase {
     public String getOwnerName(){
 
         BrowserUtils.waitForPageToLoad(10);
+        //wait until element to be present in DOM
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("select2-chosen")));
         wait.until(ExpectedConditions.visibilityOf(owner));
 
