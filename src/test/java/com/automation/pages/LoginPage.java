@@ -11,19 +11,22 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 
     @FindBy(id="prependedInput")
-    public WebElement username;
+    private WebElement username;
     // this and the below is same thing
     //public WebElement username2= Driver.getDriver().findElement(By.id("prependedInput"));
 
     @FindBy(id="prependedInput2")
-    public WebElement password;
+    private WebElement password;
 
     @FindBy(id="_submit")
-    public WebElement login;
+    private WebElement login;
 
 
     @FindBy(linkText="Forgot your password?")
-    public WebElement forgotPassword;
+    private WebElement forgotPassword;
+
+    @FindBy (css="[class='alert alert-error']")
+    private WebElement warningMessage;
 
     public LoginPage(){
 
@@ -33,6 +36,12 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(),this);
                                                       // or instead of this LoginPage.class
 
+    }
+
+
+    public String getWarningMessageText(){
+
+        return warningMessage.getText();
     }
 
     /**

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public abstract class TestBase {  // day 14 we create that
+public abstract class AbstractTestBase {  // day 14 we create that
 
     // will be visible in the subclass, regardless on subclass location(same package or not)
     protected WebDriverWait wait;
